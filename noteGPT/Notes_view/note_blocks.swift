@@ -19,7 +19,7 @@ struct note_blocks: View {
             ScrollView{
                 LazyVGrid(columns: layout) {
                     ForEach(1..<11) {
-                        Single_note_block(texto:    "Nota \($0)").padding(40)
+                        Single_note_block(texto:    "Nota \($0)").padding(15)
                     }
                 }
             }

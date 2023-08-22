@@ -13,7 +13,7 @@ struct Single_note_block: View {
     
     var body: some View {
         ZStack{
-            Rectangle().frame(width: 150, height: 150).foregroundColor(.white)
+            Rectangle().frame(width: 150, height: 150).foregroundColor(.white).cornerRadius(10)
             Text(texto).foregroundColor(.black).bold()
         }
     }
