@@ -17,6 +17,7 @@ struct project_item: View{
             .overlay(
                 Text(titulo)
                     .font(.custom("Times", size:30))
+                    .foregroundColor(.black)
             )
     }
     init(titulo: String) {
