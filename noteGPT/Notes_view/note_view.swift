@@ -10,11 +10,13 @@ import SwiftUI
 struct note_view: View {
     
     var nota = "Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Detraxit consequat et quo num tendi nada."
+    var path = "caminho"
+    var head = "Projeto"
     
     var body: some View {
         VStack(spacing: 0){
-            header()
-            app_path()
+            header(title: head)
+            app_path(path: path)
             Spacer()
             ZStack(alignment: .center){
                 Rectangle()
@@ -29,6 +31,11 @@ struct note_view: View {
     
     init() {
         
+    }
+    
+    init(path: String, head:String){
+        self.path = path
+        self.head = head
     }
     
     init(nota:String) {

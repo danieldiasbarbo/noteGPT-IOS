@@ -12,18 +12,23 @@ struct note_blocks: View {
         GridItem(.fixed(180)),
         GridItem(.fixed(180))
     ]
+    var path = "Projeto01"
     var body: some View {
-        VStack(alignment: .leading,spacing: 0){
-            header()
-            app_path()
-            ScrollView{
-                LazyVGrid(columns: layout) {
-                    ForEach(1..<11) {
-                        Single_note_block(texto:    "Nota \($0)").padding(10)
+        NavigationStack{
+            VStack(alignment: .leading,spacing: 0){
+                header(title: path)
+                app_path(path: "\(path) -> Notas")
+                ScrollView{
+                    LazyVGrid(columns: layout) {
+                        ForEach(1..<11) { item in
+                            NavigationLink(destination: note_view(path:"\(path) -> Notas -> Nota \(item)", head: path)){
+                                Single_note_block(texto:"Nota \(item)").padding(10)
+                            }
+                        }
                     }
                 }
-            }
-        }.background(Color("azul_escuro")).ignoresSafeArea()
+            }.background(Color("azul_escuro")).ignoresSafeArea()
+        }.ignoresSafeArea()
     }
 }
 

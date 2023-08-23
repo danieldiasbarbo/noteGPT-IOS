@@ -16,6 +16,7 @@
 		F59F3A582A9419D50060F98E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59F3A572A9419D50060F98E /* ContentView.swift */; };
 		F59F3A5A2A9419D70060F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F59F3A592A9419D70060F98E /* Assets.xcassets */; };
 		F59F3A5D2A9419D70060F98E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F59F3A5C2A9419D70060F98E /* Preview Assets.xcassets */; };
+		F5C8D5182A96BD7500F33493 /* projects_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C8D5172A96BD7500F33493 /* projects_view.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		F59F3A572A9419D50060F98E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F59F3A592A9419D70060F98E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F59F3A5C2A9419D70060F98E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F5C8D5172A96BD7500F33493 /* projects_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projects_view.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				F59F3A572A9419D50060F98E /* ContentView.swift */,
 				F59F3A592A9419D70060F98E /* Assets.xcassets */,
 				F59F3A5B2A9419D70060F98E /* Preview Content */,
+				F5C8D5172A96BD7500F33493 /* projects_view.swift */,
 			);
 			path = noteGPT;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				F53E8A632A956D05002407E7 /* app_path.swift in Sources */,
 				F53E8A612A956B0E002407E7 /* header.swift in Sources */,
+				F5C8D5182A96BD7500F33493 /* projects_view.swift in Sources */,
 				F53E8A682A957604002407E7 /* note_view.swift in Sources */,
 				F59F3A582A9419D50060F98E /* ContentView.swift in Sources */,
 				F53E8A5F2A956AFA002407E7 /* note_blocks.swift in Sources */,
