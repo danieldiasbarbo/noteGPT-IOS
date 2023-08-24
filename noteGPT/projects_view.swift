@@ -105,11 +105,11 @@ struct projects_view: View {
                                         Button(){
                                             AI_popup.toggle()
                                         } label: {
-                                            Image(systemName: "ellipsis")
+                                            Image(systemName: "brain.head.profile")
                                                 .resizable()
-                                                .frame(width: 20, height: 5)
+                                                .frame(width: 20, height: 25)
                                                 .padding(40)
-                                                .foregroundColor(.black)
+                                                .foregroundColor(Color("azul_claro"))
                                         },
                                         alignment: .trailing
                                     )

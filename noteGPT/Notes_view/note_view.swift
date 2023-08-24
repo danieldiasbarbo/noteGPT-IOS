@@ -12,6 +12,7 @@ struct note_view: View {
     var nota = "Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Detraxit consequat et quo num tendi nada."
     var path = "caminho"
     var head = "Projeto"
+    @State var AI_popup = true
     
     var body: some View {
         VStack(spacing: 0){
@@ -24,6 +25,20 @@ struct note_view: View {
                     .cornerRadius(30)
                     .foregroundColor(.white)
                 Text(nota).frame(width: 300, height: 450)
+                VStack{
+                    HStack{
+                        Button(){
+                            AI_popup.toggle()
+                        } label: {
+                            Image(systemName: "brain.head.profile")
+                                .resizable()
+                                .frame(width: 20, height: 25)
+                                .padding(40)
+                                .foregroundColor(Color("azul_claro"))
+                        }
+                    }
+                    Spacer()
+                }
             }
             Spacer()
         }.background(Color("azul_escuro")).ignoresSafeArea()
