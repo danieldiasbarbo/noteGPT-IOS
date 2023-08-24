@@ -1,10 +1,3 @@
-//
-//  projects_view.swift
-//  noteGPT
-//
-//  Created by Student05 on 23/08/23.
-//
-
 import SwiftUI
 
 struct project_item: View{
@@ -55,9 +48,9 @@ struct headerProjeto: View {
 struct profile: View{
     var body: some View{
         ZStack{
-            Rectangle() // Moldura arredondada
-                .foregroundColor(.white) // Cor de fundo da moldura
-                .frame(width: 340, height: 80) // Tamanho da moldura
+            Rectangle()
+                .foregroundColor(.white)
+                .frame(width: 340, height: 80)
                 .overlay(
                     RoundedRectangle(cornerRadius: 42.5)
                         .stroke(.black, lineWidth: 2)
@@ -70,7 +63,7 @@ struct profile: View{
                     .clipShape(Circle())
                     .overlay(
                         Circle()
-                            .stroke(Color("azul_escuro"), lineWidth: 2) // Cor e largura da borda
+                            .stroke(Color("azul_escuro"), lineWidth: 2)
                     )
                 Spacer()
                 Text("Bem-vindo(a), Jango!")
@@ -83,8 +76,6 @@ struct profile: View{
     }
 }
 
-
-
 struct PopupView: View {
     @Binding var isPresented: Bool
     
@@ -92,16 +83,74 @@ struct PopupView: View {
         ZStack {
             Color.white
             VStack {
-                Text("Texto do pop-up aqui")
+              HStack {
+                Spacer()
+                Button(action: {
+                  isPresented.toggle()
+               }) {
+                  Image(systemName: "xmark")
+                    .font(.headline)
+                    .foregroundColor(.black)
+                    .padding(10)
+                    .background(Color.white)
+                }
+             }
+                Text("Como posso te ajudar?")
                     .font(.headline)
                     .padding()
-                Button("Fechar") {
-                    isPresented.toggle()
+                Button("Resuma") {
                 }
-                .padding(.bottom, 20)
+                .frame(width: 250)
+                .font(.headline)
+                .foregroundColor(.black)
+                .padding()
+                .background(Color.white)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.black, lineWidth: 1)
+                )
+                .padding(.bottom, 10)
+                Button("Explique") {
+                }
+                .frame(width: 250)
+                .font(.headline)
+                .foregroundColor(.black)
+                .padding()
+                .background(Color.white)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.black, lineWidth: 1)
+                )
+                .padding(.bottom, 10)
+                Button("Me dê ideias") {
+                }
+                .frame(width: 250)
+                .font(.headline)
+                .foregroundColor(.black)
+                .padding()
+                .background(Color.white)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.black, lineWidth: 1)
+                )
+                .padding(.bottom, 10)
+                Button("Adicione") {
+                }
+                .frame(width: 250)
+                .font(.headline)
+                .foregroundColor(.black)
+                .padding()
+                .background(Color.white)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.black, lineWidth: 1)
+                )
+                .padding(.bottom, 10)
+    
+                .padding()
             }
         }
-        .frame(width: 300, height: 200)
+        .frame(width: 300, height: 500)
         .cornerRadius(15)
         .shadow(radius: 5)
     }
@@ -118,9 +167,9 @@ struct projects_view: View {
                 ScrollView {
                     VStack(spacing: 20) {
                         ZStack{
-                            RoundedRectangle(cornerRadius: 23) // Moldura arredondadaa
-                                .foregroundColor(Color("azul_escuro")) // Cor de fundo da moldura
-                                .frame(width: 350) // Tamanho da moldura
+                            RoundedRectangle(cornerRadius: 23)
+                                .foregroundColor(Color("azul_escuro"))
+                                .frame(width: 350)
                             VStack(spacing: 10){
                                 ForEach(0..<10) {item in
                                     NavigationLink(destination: note_blocks(path: "Projeto \(item)")){
@@ -136,9 +185,9 @@ struct projects_view: View {
                                                 .foregroundColor(Color("azul_claro"))
                                         }
                                         
-                                            .sheet(isPresented: $AI_popup) {
-                                                                                        PopupView(isPresented: $AI_popup)
-                                                                                    },
+                                        .sheet(isPresented: $AI_popup) {
+                                            PopupView(isPresented: $AI_popup)
+                                        },
                                         alignment: .trailing
                                     )
                                 }
@@ -151,7 +200,6 @@ struct projects_view: View {
             }
         }
         .ignoresSafeArea()
-        
     }
 }
 
