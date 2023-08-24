@@ -83,6 +83,30 @@ struct profile: View{
     }
 }
 
+
+
+struct PopupView: View {
+    @Binding var isPresented: Bool
+    
+    var body: some View {
+        ZStack {
+            Color.white
+            VStack {
+                Text("Texto do pop-up aqui")
+                    .font(.headline)
+                    .padding()
+                Button("Fechar") {
+                    isPresented.toggle()
+                }
+                .padding(.bottom, 20)
+            }
+        }
+        .frame(width: 300, height: 200)
+        .cornerRadius(15)
+        .shadow(radius: 5)
+    }
+}
+
 struct projects_view: View {
     @State var AI_popup = false
     
@@ -110,7 +134,11 @@ struct projects_view: View {
                                                 .frame(width: 20, height: 25)
                                                 .padding(40)
                                                 .foregroundColor(Color("azul_claro"))
-                                        },
+                                        }
+                                        
+                                            .sheet(isPresented: $AI_popup) {
+                                                                                        PopupView(isPresented: $AI_popup)
+                                                                                    },
                                         alignment: .trailing
                                     )
                                 }
