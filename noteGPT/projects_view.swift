@@ -10,15 +10,15 @@ import SwiftUI
 struct project_item: View{
     var titulo = "teste"
     var body: some View{
-        RoundedRectangle(cornerRadius: 10)
-            .foregroundColor(.white)
-            .frame(width: 330, height: 80)
-            .padding(10)
-            .overlay(
-                Text(titulo)
-                    .font(.custom("Times", size:30))
-                    .foregroundColor(.black)
-            )
+        ZStack{
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(.white)
+                .frame(width: 330, height: 80)
+                .padding(10)
+            Text(titulo)
+                .font(.custom("Times", size:30))
+                .foregroundColor(.black)
+        }
     }
     init(titulo: String) {
         self.titulo = titulo
@@ -44,8 +44,8 @@ struct headerProjeto: View {
                         .stroke(Color("azul_escuro"), lineWidth: 1)
                 )
             Text("Projetos")
-                .font(.custom("Arial", size: 30))
-                .foregroundColor(.black)
+                .font(.custom("Arial", size: 25))
+                .foregroundColor(Color("azul_escuro"))
                 .bold()
                 .frame(height: 10)
         }
@@ -84,6 +84,8 @@ struct profile: View{
 }
 
 struct projects_view: View {
+    @State var AI_popup = false
+    
     var body: some View {
         NavigationStack{
             VStack {
@@ -99,7 +101,18 @@ struct projects_view: View {
                                 ForEach(0..<10) {item in
                                     NavigationLink(destination: note_blocks(path: "Projeto \(item)")){
                                         project_item(titulo: "Projeto \(item)")
-                                    }
+                                    }.overlay(
+                                        Button(){
+                                            AI_popup.toggle()
+                                        } label: {
+                                            Image(systemName: "ellipsis")
+                                                .resizable()
+                                                .frame(width: 20, height: 5)
+                                                .padding(40)
+                                                .foregroundColor(.black)
+                                        },
+                                        alignment: .trailing
+                                    )
                                 }
                             }
                             
